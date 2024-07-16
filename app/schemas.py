@@ -26,9 +26,13 @@ class Chat(BaseModel):
     chat_id: int
     user_id: int
     date: str  # This will be set automatically, no input required
-
+    mood: str
+    
     class Config:
         orm_mode = True
+
+class ChatUpdate(BaseModel):
+    mood: str
         
 class UserBase(BaseModel):
     name: str
@@ -39,6 +43,13 @@ class UserCreate(UserBase):
 class User(UserBase):
     user_id: int
     chats: list[Chat] = []
+
+    class Config:
+        orm_mode = True
+
+class Emotion(BaseModel):
+    emotion: str
+    embeddings: list[float]
 
     class Config:
         orm_mode = True

@@ -1,1 +1,1 @@
-DATABASE_URL: 'postgresql://dbadmin:D:m/=P$6X+0x~,C@35.221.223.117:5432/stakeholders'
+DATABASE_URL: 'postgresql://dbadmin:D:m/=P$6X+0x~,C@35.221.223.117:5432/chat-db'

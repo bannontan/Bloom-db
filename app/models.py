@@ -1,8 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, Date, create_engine, func
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
+from .database import Base, Base2
 
-Base = declarative_base()
+# Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'users'
@@ -15,6 +16,8 @@ class Chat(Base):
     chat_id = Column(Integer, primary_key=True)
     date = Column(String)  # Changed from Date to String
     user_id = Column(Integer, ForeignKey('users.user_id'))
+    mood = Column(Text, default='neutral')
+    
     user = relationship("User", back_populates="chats")
     messages = relationship("Message", back_populates="chat")
 
@@ -25,3 +28,9 @@ class Message(Base):
     content = Column(Text)
     role = Column(String)
     chat = relationship("Chat", back_populates="messages")
+    
+class Emotion(Base2):
+    __tablename__ = 'emotions'
+    id = Column(Integer, primary_key=True)
+    emotion = Column(String)
+    embeddings = Column(Text)

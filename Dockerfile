@@ -1,5 +1,6 @@
 # Use the official image as a parent image
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+# FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+FROM python:3.10-slim
 
 # Set the working directory
 WORKDIR /app
