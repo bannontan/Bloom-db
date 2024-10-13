@@ -2,8 +2,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "postgresql://dbadmin:D:m/=P\$6X+0x~,C@35.221.223.117:5432/chat-db"
-SQLALCHEMY_DATABASE_URL2 = "postgresql://dbadmin:D:m/=P\$6X+0x~,C@35.221.223.117:5432/emotion-db"
+# The SQLALCHEMY_DATABASE_URL have been hidden for security reasons
+SQLALCHEMY_DATABASE_URL = r"postgresql://dbadmin..."
+SQLALCHEMY_DATABASE_URL2 = r"postgresql://dbadmin..."  
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
